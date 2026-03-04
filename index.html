@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#1C3830" />
+
+  <!-- ══ SEO ══════════════════════════════════════════════════ -->
+  <title>Sacred Chants Course — Direct Transmission From the Source</title>
+  <meta name="description" content="6 high-fidelity sacred chants + Master E-book + pronunciation guide. Direct transmission from the Noke Koĩ people. 30-day guarantee. €39." />
+  <link rel="canonical" href="https://tirinde.pakakamanawa.com/" />
+
+  <!-- ══ Open Graph ════════════════════════════════════════════ -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://tirinde.pakakamanawa.com/" />
+  <meta property="og:title"       content="Sacred Chants Course — Direct Transmission From the Source" />
+  <meta property="og:description" content="6 high-fidelity sacred chants + Master E-book + pronunciation guide. Direct transmission from the Noke Koĩ people. 30-day guarantee. €39." />
+  <meta property="og:image"       content="https://tirinde.pakakamanawa.com/assets/hero-desktop.jpg" />
+
+  <!-- ══ Twitter Card ══════════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Sacred Chants Course — Direct Transmission From the Source" />
+  <meta name="twitter:description" content="6 high-fidelity sacred chants + Master E-book + pronunciation guide. Direct transmission from the Noke Koĩ people. 30-day guarantee. €39." />
+  <meta name="twitter:image"       content="https://tirinde.pakakamanawa.com/assets/hero-desktop.jpg" />
+  <!-- ══════════════════════════════════════════════════════════ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: #1C3830; }
+    body {
+      background: #1C3830;
+      color: #E8E0C9;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    :root {
+      --forest-deep: #1C3830;
+      --cream:  #E8E0C9;
+      --teal:   #5B9C9B;
+      --ochre:  #C8955F;
+    }
+
+    /* ════════════════════════════════
+       HERO — PHOTO BLOCK
+    ════════════════════════════════ */
+    .hero-photo-block {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: #152e24;
+
+      /* Mobile default: tall portrait */
+      height: 100svh;
+      min-height: 600px;
+      max-height: 900px;
+    }
+
+    /* Background photo — fills container */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Mobile: center on face */
+      object-position: center 18%;
+    }
+
+    /* Desktop overrides */
+    @media (min-width: 768px) {
+      .hero-photo-block {
+        height: 92vh;
+        min-height: 560px;
+        max-height: 980px;
+      }
+      .hero-bg {
+        object-position: center 22%;
+      }
+    }
+
+    /* ── GRADIENT OVERLAYS ── */
+
+    /* Top — for lang switcher readability */
+    .hero-overlay-top {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.38) 0%,
+        transparent 28%
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Bottom — blends into page background */
+    .hero-overlay-bottom {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 62%;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(28, 56, 48, 0.55) 35%,
+        rgba(28, 56, 48, 0.88) 65%,
+        #1C3830 100%
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Radial vignette behind logo — makes logo pop professionally */
+    .hero-logo-vignette {
+      position: absolute;
+      left: 50%;
+      /* vertically: upper-center area of photo */
+      top: 42%;
+      transform: translate(-50%, -50%);
+      width: clamp(260px, 55vw, 460px);
+      height: clamp(220px, 46vw, 390px);
+      background: radial-gradient(
+        ellipse at center,
+        rgba(0,0,0,0.45) 0%,
+        rgba(0,0,0,0.18) 50%,
+        transparent 80%
+      );
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    /* ── LANGUAGE SWITCHER ── */
+    .lang-switcher {
+      position: absolute;
+      top: max(1.1rem, env(safe-area-inset-top));
+      left: 0; right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    .lang-btn {
+      background: none; border: none; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.75rem;
+      color: var(--cream);
+      opacity: 0.55;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .lang-btn:hover { opacity: 0.85; }
+    .lang-btn.active { color: var(--ochre); opacity: 1; font-weight: 600; }
+    .lang-sep { color: var(--cream); opacity: 0.2; font-size: 0.75rem; user-select: none; }
+
+    /* ── LOGO OVER PHOTO ── */
+    .hero-logo-wrap {
+      position: absolute;
+      left: 50%;
+      top: 42%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* responsive width */
+      width: clamp(160px, 38vw, 280px);
+    }
+
+    @media (min-width: 768px) {
+      .hero-logo-vignette { top: 44%; }
+      .hero-logo-wrap {
+        width: clamp(200px, 22vw, 320px);
+        top: 44%;
+      }
+    }
+
+    .hero-logo-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* deep shadow so cream letters pop on any photo */
+      filter:
+        drop-shadow(0 2px 10px rgba(0,0,0,0.70))
+        drop-shadow(0 0px  3px rgba(0,0,0,0.55));
+    }
+
+    /* ════════════════════════════════
+       HERO — TEXT BLOCK (below photo)
+    ════════════════════════════════ */
+    .hero-text-block {
+      background: var(--forest-deep);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 36rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2.25rem max(1.5rem, env(safe-area-inset-left)) 0
+                        max(1.5rem, env(safe-area-inset-right));
+    }
+
+    .hero-headline {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.8vw, 2.5rem);
+      color: var(--cream);
+      line-height: 1.22;
+      letter-spacing: 0.01em;
+      margin-bottom: 1.2rem;
+      text-wrap: balance;
+    }
+
+    .hero-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(0.88rem, 2.2vw, 1.02rem);
+      color: var(--cream);
+      opacity: 0.80;
+      line-height: 1.8;
+      max-width: 28rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-transmitters {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(0.58rem, 1.5vw, 0.72rem);
+      color: var(--teal);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.7;
+    }
+
+    /* ── TRIBAL DIVIDER ── */
+    .tribal-wrap {
+      width: 100%;
+      background: var(--forest-deep);
+      margin-top: 2rem;
+    }
+    .tribal-line {
+      width: 100%;
+      height: 1px;
+      background: var(--ochre);
+      opacity: 0.28;
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      background: var(--forest-deep);
+      width: 100%;
+      max-width: 36rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem max(1.5rem, env(safe-area-inset-left)) 5rem
+                       max(1.5rem, env(safe-area-inset-right));
+    }
+
+    .cta-button {
+      display: block;
+      width: 100%;
+      max-width: 23rem;
+      text-align: center;
+      padding: 1.1rem 2rem;
+      border-radius: 9999px;
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      font-size: clamp(0.8rem, 2.2vw, 0.95rem);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      background: linear-gradient(135deg, #C8955F 0%, #a97040 100%);
+      color: #1C3830;
+      box-shadow: 0 4px 24px rgba(200, 149, 95, 0.32);
+      transition: box-shadow 0.2s, transform 0.15s;
+      border: none;
+      cursor: pointer;
+    }
+    .cta-button:hover {
+      box-shadow: 0 6px 32px rgba(200, 149, 95, 0.50);
+      transform: translateY(-1px);
+    }
+    .cta-button:active { transform: scale(0.98); }
+
+    .cta-microcopy {
+      margin-top: 0.85rem;
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(0.65rem, 1.6vw, 0.76rem);
+      color: var(--cream);
+      opacity: 0.48;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+
+    /* ── PLACEHOLDER ── */
+    .blocks-placeholder {
+      width: 100%;
+      padding: 3rem 1.5rem 5rem;
+      text-align: center;
+      opacity: 0.2;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     BLOCO 1 — HERO
+══════════════════════════════════ -->
+
+<!-- ── Language Switcher ── -->
+<nav class="lang-switcher" aria-label="Language selector">
+  <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+  <span class="lang-sep" aria-hidden="true">|</span>
+  <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
+  <span class="lang-sep" aria-hidden="true">|</span>
+  <button class="lang-btn" data-lang="pt" onclick="setLang('pt')">PT</button>
+</nav>
+
+<!-- ── Photo block ── -->
+<div class="hero-photo-block">
+
+  <!-- Responsive photo: portrait on mobile, landscape on desktop -->
+  <picture>
+    <source
+      media="(min-width: 768px)"
+      srcset="public/assets/hero-desktop.jpg"
+    />
+    <img
+      class="hero-bg"
+      src="public/assets/hero-mobile.jpg"
+      alt="Paká Kamanawa — Guardian of Noke Koĩ chants, Amazon"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </picture>
+
+  <!-- Gradient overlays -->
+  <div class="hero-overlay-top"  aria-hidden="true"></div>
+  <div class="hero-overlay-bottom" aria-hidden="true"></div>
+
+  <!-- Radial vignette behind logo -->
+  <div class="hero-logo-vignette" aria-hidden="true"></div>
+
+  <!-- Logo — centered over photo -->
+  <div class="hero-logo-wrap">
+    <img
+      class="hero-logo-img"
+      src="public/assets/logo-hero.png"
+      alt="Nii Tirinde Koĩ"
+      loading="eager"
+      draggable="false"
+    />
+  </div>
+
+</div>
+
+<!-- ── Text block ── -->
+<div class="hero-text-block">
+
+  <div class="hero-inner">
+    <h1 class="hero-headline" id="hero-headline">
+      The voice of the forest —<br>straight from the source, to you.
+    </h1>
+    <p class="hero-sub" id="hero-sub">
+      Receive 6 sacred Noke Koĩ chants in WAV (high fidelity) — with guided pronunciation, true meaning, and a pact of reciprocity.
+    </p>
+    <p class="hero-transmitters" id="hero-transmitters">
+      Direct transmission with Paká Kamanawa and Rurá Varinawa — Noke Koĩ people (Amazon).
+    </p>
+  </div>
+
+  <!-- Tribal divider -->
+  <div class="tribal-wrap">
+    <div class="tribal-line"></div>
+    <svg width="100%" height="28" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <pattern id="tp" x="0" y="0" width="80" height="28" patternUnits="userSpaceOnUse">
+          <polyline points="2,14 8,8 14,14 8,20 2,14"  fill="none" stroke="#5B9C9B" stroke-width="1.2" stroke-linejoin="round"/>
+          <polygon  points="6,14 8,12 10,14 8,16"      fill="#5B9C9B"/>
+          <polygon  points="38,6 44,14 38,22 32,14"    fill="none" stroke="#C8955F" stroke-width="1.2"/>
+          <polygon  points="38,10 41,14 38,18 35,14"   fill="#C8955F"/>
+          <polyline points="66,14 72,8 78,14 72,20 66,14" fill="none" stroke="#5B9C9B" stroke-width="1.2" stroke-linejoin="round"/>
+          <polygon  points="70,14 72,12 74,14 72,16"   fill="#5B9C9B"/>
+          <circle cx="20" cy="10" r="1.5" fill="#C8955F"/>
+          <circle cx="20" cy="18" r="1.5" fill="#C8955F"/>
+          <circle cx="56" cy="10" r="1.5" fill="#C8955F"/>
+          <circle cx="56" cy="18" r="1.5" fill="#C8955F"/>
+          <line x1="23" y1="11" x2="27" y2="17" stroke="#5B9C9B" stroke-width="1"/>
+          <line x1="27" y1="11" x2="23" y2="17" stroke="#5B9C9B" stroke-width="1"/>
+          <line x1="53" y1="11" x2="57" y2="17" stroke="#5B9C9B" stroke-width="1"/>
+          <line x1="57" y1="11" x2="53" y2="17" stroke="#5B9C9B" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="28" fill="url(#tp)"/>
+    </svg>
+    <div class="tribal-line"></div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <a class="cta-button" href="#offer" id="cta-btn">
+      Receive the First Seed — €39
+    </a>
+    <p class="cta-microcopy" id="cta-micro">
+      Instant access • 60% returns to the village • 30-day guarantee
+    </p>
+  </div>
+
+</div>
+
+<!-- Blocks 2–12 pending approval -->
+<div class="blocks-placeholder">✦ Blocks 2 – 12 pending Block 1 approval ✦</div>
+
+<!-- ══════════════════════════════════
+     TRANSLATIONS — LOCKED 2026-03-04
+     DO NOT ALTER any character.
+══════════════════════════════════ -->
+<script>
+const T = {
+  en: {
+    headline:     'The voice of the forest —\nstraight from the source, to you.',
+    sub:          'Receive 6 sacred Noke Koĩ chants in WAV (high fidelity) — with guided pronunciation, true meaning, and a pact of reciprocity.',
+    transmitters: 'Direct transmission with Paká Kamanawa and Rurá Varinawa — Noke Koĩ people (Amazon).',
+    cta:          'Receive the First Seed — €39',
+    micro:        'Instant access • 60% returns to the village • 30-day guarantee',
+  },
+  de: {
+    headline:     'Die Stimme des Waldes —\ndirekt aus der Quelle zu dir.',
+    sub:          'Erhalte 6 heilige Noke-Koĩ-Gesänge im WAV-Format (hohe Klangqualität) — mit geführter Aussprache, echter Bedeutung und einem Pakt der Gegenseitigkeit.',
+    transmitters: 'Direkte Übertragung mit Paká Kamanawa und Rurá Varinawa — Volk der Noke Koĩ (Amazonas).',
+    cta:          'Den Ersten Samen empfangen — 39 €',
+    micro:        'Sofortiger Zugang • 60 % gehen an das Dorf zurück • 30 Tage Garantie',
+  },
+  pt: {
+    headline:     'A voz da floresta,\ndireto da fonte, até você.',
+    sub:          'Receba 6 cantos sagrados Noke Koĩ em WAV (alta fidelidade) — com pronúncia guiada, significado real e pacto de reciprocidade.',
+    transmitters: 'Transmissão direta com Paká Kamanawa e Rurá Varinawa — povo Noke Koĩ (Amazônia).',
+    cta:          'Receber a Primeira Semente — €39',
+    micro:        'Acesso imediato • 60% retorna à aldeia • Garantia 30 dias',
+  },
+};
+
+let lang = localStorage.getItem('ntk-lang') || 'en';
+
+function render() {
+  const tr = T[lang];
+  document.getElementById('hero-headline').innerHTML =
+    tr.headline.replace('\n', '<br>');
+  document.getElementById('hero-sub').textContent          = tr.sub;
+  document.getElementById('hero-transmitters').textContent = tr.transmitters;
+  document.getElementById('cta-btn').textContent           = tr.cta;
+  document.getElementById('cta-micro').textContent         = tr.micro;
+  document.querySelectorAll('.lang-btn').forEach(btn =>
+    btn.classList.toggle('active', btn.dataset.lang === lang)
+  );
+  document.documentElement.lang = lang;
+}
+
+function setLang(l) {
+  lang = l;
+  localStorage.setItem('ntk-lang', l);
+  render();
+}
+
+render();
+</script>
+</body>
+</html>

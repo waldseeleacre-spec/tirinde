@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest:    #284C42;
+  --color-forest-deep: #1C3830;
+  --color-cream:     #E8E0C9;
+  --color-teal:      #5B9C9B;
+  --color-ochre:     #C8955F;
+  --color-ochre-dark: #a0733d;
+
+  --font-display: 'Cinzel', serif;
+  --font-body:    'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #284C42;
+}
+
+body {
+  background-color: #284C42;
+  color: #E8E0C9;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cinzel', serif;
+}
+
+/* Prevent horizontal scroll */
+#root {
+  overflow-x: hidden;
+}
+
+/* ── Scroll-reveal animations (IntersectionObserver) ── */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-animate][data-delay='1'] { transition-delay: 0.10s; }
+[data-animate][data-delay='2'] { transition-delay: 0.20s; }
+[data-animate][data-delay='3'] { transition-delay: 0.30s; }
+[data-animate][data-delay='4'] { transition-delay: 0.40s; }
+[data-animate][data-delay='5'] { transition-delay: 0.50s; }
