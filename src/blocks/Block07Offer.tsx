@@ -297,6 +297,7 @@ export function Block07Offer() {
                   e.currentTarget.style.boxShadow = '0 4px 28px rgba(200,149,95,0.28)'
                   e.currentTarget.style.transform = 'translateY(0)'
                 }}
+                onClick={() => { window.location.href = 'https://www.pakakamanawa.com/noke-koi' }}
               >
                 {t.ctaButton}
               </button>
