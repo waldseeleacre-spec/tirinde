@@ -166,7 +166,6 @@ export function Block01Hero() {
           label={hero.ctaButton}
           microcopy={hero.microcopy}
           size="lg"
-          href="https://www.pakakamanawa.com/noke-koi"
         />
       </div>
 

@@ -158,7 +158,6 @@ export function Block12Closing() {
                 '0 0 28px rgba(200,149,95,0.28), 0 4px 18px rgba(0,0,0,0.35)'
               ;(e.currentTarget as HTMLButtonElement).style.transform = 'translateY(0)'
             }}
-            onClick={() => { window.location.href = 'https://www.pakakamanawa.com/noke-koi' }}
           >
             {t.ctaButton}
           </button>

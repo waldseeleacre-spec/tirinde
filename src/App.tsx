@@ -6,6 +6,7 @@ import { Block04Opportunity } from './blocks/Block04Opportunity'
 import { Block05Transmitters } from './blocks/Block05Transmitters'
 import { Block06Pact } from './blocks/Block06Pact'
 import { Block07Offer } from './blocks/Block07Offer'
+import { BlockComparison } from './blocks/BlockComparison'
 import { Block08WhoItIsFor } from './blocks/Block08WhoItIsFor'
 import { Block09HowItWorks } from './blocks/Block09HowItWorks'
 import { Block10Guarantee } from './blocks/Block10Guarantee'
@@ -20,6 +21,7 @@ import { Block12Closing } from './blocks/Block12Closing'
 // Block 5  — Who Transmits    ✓ approved
 // Block 6  — The Pact         ✓ approved
 // Block 7  — Offer            ✓ approved
+// Block 7b — Comparison       ✓ implemented (between 7 and 8)
 // Block 8  — Who It Is For    ✓ implemented
 // Block 9  — VOZ Method       ✓ implemented
 // Block 10 — Guarantee        ✓ implemented
@@ -38,6 +40,7 @@ export default function App() {
         <Block05Transmitters />
         <Block06Pact />
         <Block07Offer />
+        <BlockComparison />
         <Block08WhoItIsFor />
         <Block09HowItWorks />
         <Block10Guarantee />
