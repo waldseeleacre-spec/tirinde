@@ -1,7 +1,8 @@
 import { useLang } from '../i18n/LangContext'
+import { navCtaLabel, scrollToComparison } from '../i18n/navCta'
 
 export function Block12Closing() {
-  const { t: allT } = useLang()
+  const { t: allT, lang } = useLang()
   const t = allT.block12
 
   return (
@@ -158,8 +159,9 @@ export function Block12Closing() {
                 '0 0 28px rgba(200,149,95,0.28), 0 4px 18px rgba(0,0,0,0.35)'
               ;(e.currentTarget as HTMLButtonElement).style.transform = 'translateY(0)'
             }}
+            onClick={scrollToComparison}
           >
-            {t.ctaButton}
+            {navCtaLabel[lang]}
           </button>
 
           {/* ── Microcopy ── */}

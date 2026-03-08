@@ -1,9 +1,10 @@
 import { useLang } from '../i18n/LangContext'
 import { LangSwitcher } from '../components/LangSwitcher'
 import { CTAButton } from '../components/CTAButton'
+import { navCtaLabel } from '../i18n/navCta'
 
 export function Block01Hero() {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const { hero } = t
 
   // Split headline on \n for line breaks
@@ -163,9 +164,10 @@ export function Block01Hero() {
         }}
       >
         <CTAButton
-          label={hero.ctaButton}
+          label={navCtaLabel[lang]}
           microcopy={hero.microcopy}
           size="lg"
+          href="#block-comparison"
         />
       </div>
 
