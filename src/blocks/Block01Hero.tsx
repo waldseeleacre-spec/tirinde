@@ -13,7 +13,7 @@ export function Block01Hero() {
   return (
     <section
       className="relative w-full min-h-screen flex flex-col items-center overflow-x-hidden"
-      style={{ background: '#284C42' }}
+      style={{ background: '#1D1D1D' }}
     >
       {/* ── Background photo ── */}
       {/* object-position: 28% 15% → shifts face LEFT and UP, freeing right/lower area for logo */}
@@ -46,7 +46,7 @@ export function Block01Hero() {
           width: '100%',
           height: '65%',
           background:
-            'linear-gradient(to bottom, rgba(40,76,66,0.50) 0%, rgba(40,76,66,0.60) 40%, rgba(40,76,66,0.85) 72%, #284C42 100%)',
+            'linear-gradient(to bottom, rgba(29,29,29,0.35) 0%, rgba(29,29,29,0.55) 40%, rgba(29,29,29,0.82) 72%, #1D1D1D 100%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}
@@ -105,7 +105,7 @@ export function Block01Hero() {
             fontFamily: 'Cinzel, serif',
             fontWeight: 700,
             fontSize: 'clamp(1.75rem, 5.5vw, 3rem)',
-            color: '#E8E0C9',
+            color: '#E6E3DC',
             letterSpacing: '0.01em',
             lineHeight: 1.25,
           }}
@@ -125,7 +125,7 @@ export function Block01Hero() {
             fontFamily: 'Inter, sans-serif',
             fontWeight: 400,
             fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)',
-            color: '#E8E0C9',
+            color: '#E6E3DC',
             opacity: 0.85,
             maxWidth: '30rem',
             lineHeight: 1.75,
@@ -141,7 +141,7 @@ export function Block01Hero() {
             fontFamily: 'Cinzel, serif',
             fontWeight: 400,
             fontSize: 'clamp(0.7rem, 2vw, 0.85rem)',
-            color: '#5B9C9B',
+            color: '#8C5737',
             letterSpacing: '0.08em',
             textTransform: 'uppercase',
             lineHeight: 1.6,
@@ -179,7 +179,7 @@ export function Block01Hero() {
       >
         <div
           className="w-px h-8"
-          style={{ background: 'linear-gradient(to bottom, rgba(232,224,201,0.4), transparent)' }}
+          style={{ background: 'linear-gradient(to bottom, rgba(230,227,220,0.4), transparent)' }}
         />
       </div>
     </section>

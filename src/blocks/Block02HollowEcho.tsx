@@ -1,52 +1,68 @@
 import { useEffect, useRef } from 'react'
 import { useLang } from '../i18n/LangContext'
-import { TribalPatternMajor } from '../components/TribalPattern'
 
-// ── Ornamental separator (diamond + dots) ──────────────────
-function OrnaSep() {
+function DiamondRule() {
   return (
-    <div
-      className="flex items-center justify-center gap-2 my-6"
-      aria-hidden="true"
-    >
-      <span style={{ width: 24, height: 1, background: 'rgba(200,149,95,0.35)', display: 'block' }} />
-      <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-        <polygon points="5,0 10,5 5,10 0,5" fill="none" stroke="#C8955F" strokeWidth="1" opacity="0.5" />
+    <div aria-hidden="true" style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '10px',
+      margin: '2rem 0',
+    }}>
+      <span style={{ display: 'block', flex: 1, height: '1px', background: 'rgba(140,87,55,0.22)' }} />
+      <svg width="8" height="8" viewBox="0 0 8 8">
+        <polygon points="4,0 8,4 4,8 0,4" fill="none" stroke="#8C5737" strokeWidth="1" opacity="0.50" />
       </svg>
-      <span style={{ width: 24, height: 1, background: 'rgba(200,149,95,0.35)', display: 'block' }} />
+      <span style={{ display: 'block', flex: 1, height: '1px', background: 'rgba(140,87,55,0.22)' }} />
     </div>
   )
 }
 
-// ── Card icon — sound waves ────────────────────────────────
-function IconWaves() {
+function IconChant() {
   return (
-    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true">
-      <path d="M1 8 C3 4, 5 12, 7 8 C9 4, 11 12, 13 8 C15 4, 17 12, 19 8 C20 6, 21 7, 22 8"
-        stroke="#5B9C9B" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.7" />
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      {/* Centro sólido */}
+      <circle cx="24" cy="24" r="4" fill="#8C5737" opacity="0.90" />
+      {/* Anel intermédio */}
+      <circle cx="24" cy="24" r="9" stroke="#8C5737" strokeWidth="1.5" fill="none" opacity="0.55" />
+      {/* Anel externo */}
+      <circle cx="24" cy="24" r="16" stroke="#8C5737" strokeWidth="1" fill="none" opacity="0.25" />
+      {/* 8 raios solares */}
+      <line x1="24" y1="4"  x2="24" y2="11" stroke="#8C5737" strokeWidth="1.8" strokeLinecap="round" opacity="0.75" />
+      <line x1="24" y1="37" x2="24" y2="44" stroke="#8C5737" strokeWidth="1.8" strokeLinecap="round" opacity="0.75" />
+      <line x1="4"  y1="24" x2="11" y2="24" stroke="#8C5737" strokeWidth="1.8" strokeLinecap="round" opacity="0.75" />
+      <line x1="37" y1="24" x2="44" y2="24" stroke="#8C5737" strokeWidth="1.8" strokeLinecap="round" opacity="0.75" />
+      <line x1="9.4"  y1="9.4"  x2="14.4" y2="14.4" stroke="#8C5737" strokeWidth="1.4" strokeLinecap="round" opacity="0.45" />
+      <line x1="33.6" y1="33.6" x2="38.6" y2="38.6" stroke="#8C5737" strokeWidth="1.4" strokeLinecap="round" opacity="0.45" />
+      <line x1="38.6" y1="9.4"  x2="33.6" y2="14.4" stroke="#8C5737" strokeWidth="1.4" strokeLinecap="round" opacity="0.45" />
+      <line x1="14.4" y1="33.6" x2="9.4"  y2="38.6" stroke="#8C5737" strokeWidth="1.4" strokeLinecap="round" opacity="0.45" />
     </svg>
   )
 }
 
-// ── Card icon — words / speech ─────────────────────────────
-function IconWords() {
+function IconVoice() {
   return (
-    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" aria-hidden="true">
-      <rect x="1" y="1" width="18" height="12" rx="3" stroke="#5B9C9B" strokeWidth="1.2" opacity="0.7" />
-      <path d="M7 17 L10 13 L13 17" stroke="#5B9C9B" strokeWidth="1.2" strokeLinejoin="round" opacity="0.7" />
-      <line x1="5" y1="5" x2="15" y2="5" stroke="#5B9C9B" strokeWidth="1" opacity="0.5" />
-      <line x1="5" y1="8" x2="12" y2="8" stroke="#5B9C9B" strokeWidth="1" opacity="0.5" />
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      {/* Espiral de voz — concha crescente */}
+      <path
+        d="M24 24 C24 20, 20 17, 16 18 C12 19, 10 23, 11 27 C12 31, 16 34, 21 33 C26 32, 30 28, 30 23 C30 17, 26 12, 20 11 C14 10, 9 14, 8 20"
+        stroke="#8C5737" strokeWidth="1.8" strokeLinecap="round" fill="none" opacity="0.85"
+      />
+      {/* Ondas de som emanando */}
+      <path d="M33 18 C36 21, 36 27, 33 30" stroke="#8C5737" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.55" />
+      <path d="M37 14 C42 19, 42 29, 37 34" stroke="#8C5737" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.30" />
+      {/* Ponto central */}
+      <circle cx="24" cy="24" r="2.5" fill="#8C5737" opacity="0.80" />
     </svg>
   )
 }
 
-// ── Main component ─────────────────────────────────────────
 export function Block02HollowEcho() {
   const { t } = useLang()
   const { block2 } = t
   const sectionRef = useRef<HTMLElement>(null)
 
-  // Scroll-reveal
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -57,14 +73,13 @@ export function Block02HollowEcho() {
           }
         })
       },
-      { threshold: 0.12, rootMargin: '0px 0px -48px 0px' }
+      { threshold: 0.10, rootMargin: '0px 0px -48px 0px' }
     )
     const els = sectionRef.current?.querySelectorAll('[data-animate]') ?? []
     els.forEach((el) => observer.observe(el))
     return () => observer.disconnect()
-  }, [t]) // re-run on lang change so newly-rendered elements get observed
+  }, [t])
 
-  // Helpers for multi-line strings
   const renderLines = (text: string) =>
     text.split('\n').map((line, i, arr) => (
       <span key={i}>
@@ -74,252 +89,227 @@ export function Block02HollowEcho() {
     ))
 
   return (
-    <section
-      ref={sectionRef}
-      style={{ background: '#284C42', position: 'relative' }}
-    >
-      {/* ── Top tribal divider ── */}
-      <TribalPatternMajor className="w-full" />
+    <section ref={sectionRef} style={{ background: '#DFD3C7', position: 'relative' }}>
 
-      {/* ── Content container ── */}
-      <div
-        style={{
-          maxWidth: '42rem',
-          margin: '0 auto',
-          paddingTop: '5rem',
-          paddingBottom: '5rem',
-          paddingLeft: 'max(1.5rem, env(safe-area-inset-left))',
-          paddingRight: 'max(1.5rem, env(safe-area-inset-right))',
-        }}
-      >
+      <div aria-hidden="true" style={{ height: '1px', background: 'rgba(140,87,55,0.22)', width: '100%' }} />
 
-        {/* ── (A) Block title ── */}
-        <div data-animate data-delay="1" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          {/* Eyebrow label */}
+      <div style={{
+        maxWidth: '42rem',
+        margin: '0 auto',
+        paddingTop: '5rem',
+        paddingBottom: '5.5rem',
+        paddingLeft: 'max(1.5rem, env(safe-area-inset-left))',
+        paddingRight: 'max(1.5rem, env(safe-area-inset-right))',
+      }}>
+
+        {/* ── Eyebrow — fora do card ── */}
+        <div data-animate data-delay="1" style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <p style={{
             fontFamily: 'Cinzel, serif',
-            fontSize: '0.65rem',
-            letterSpacing: '0.22em',
+            fontSize: '0.60rem',
+            letterSpacing: '0.26em',
             textTransform: 'uppercase',
-            color: '#5B9C9B',
-            marginBottom: '1rem',
-            opacity: 0.8,
-          }}>
-            — II —
-          </p>
-          <h2 style={{
-            fontFamily: 'Cinzel, serif',
-            fontWeight: 700,
-            fontSize: 'clamp(1.35rem, 4vw, 2rem)',
-            color: '#E8E0C9',
-            lineHeight: 1.3,
-            letterSpacing: '0.01em',
-            textShadow: '0 2px 24px rgba(40,76,66,0.8)',
-          }}>
-            {block2.title}
-          </h2>
+            color: '#8C5737',
+            opacity: 0.70,
+          }}>— II —</p>
         </div>
 
-        {/* ── (B) Lead — bigger, atmospheric ── */}
-        <div
-          data-animate
-          data-delay="2"
-          style={{
-            textAlign: 'center',
-            marginBottom: '2.5rem',
-          }}
-        >
-          <p style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: 'clamp(1.05rem, 2.8vw, 1.25rem)',
-            lineHeight: 1.85,
-            color: '#E8E0C9',
-            opacity: 0.9,
-            maxWidth: '34rem',
-            margin: '0 auto',
-          }}>
-            {renderLines(block2.lead)}
-          </p>
-        </div>
+        {/* ── CARD principal ── */}
+        <div data-animate data-delay="1" style={{
+          position: 'relative',
+          background: 'rgba(255,255,255,0.74)',
+          border: '1px solid rgba(140,87,55,0.14)',
+          borderTop: '3px solid #8C5737',
+          borderRadius: '20px',
+          boxShadow: '0 16px 64px rgba(29,29,29,0.13), 0 2px 10px rgba(140,87,55,0.09)',
+          padding: 'clamp(2rem, 5vw, 3rem)',
+          overflow: 'hidden',
+        }}>
 
-        <OrnaSep />
-
-        {/* ── Transition phrase ── */}
-        <div data-animate data-delay="1" style={{ textAlign: 'center', marginBottom: '1rem' }}>
-          <p style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: 'clamp(0.85rem, 2vw, 0.95rem)',
-            color: '#E8E0C9',
-            opacity: 0.55,
-            letterSpacing: '0.02em',
-          }}>
-            {block2.transition}
-          </p>
-        </div>
-
-        {/* ── Doubt badge ── */}
-        <div
-          data-animate
-          data-delay="2"
-          style={{ textAlign: 'center', marginBottom: '2.5rem' }}
-        >
-          <p style={{
-            fontFamily: 'Cinzel, serif',
-            fontSize: 'clamp(1.1rem, 3vw, 1.45rem)',
-            fontWeight: 700,
-            color: '#E8E0C9',
-            lineHeight: 1.4,
-            fontStyle: 'italic',
-            opacity: 0.9,
-          }}>
-            {block2.doubt}
-          </p>
-        </div>
-
-        {/* ── Answer callout bar ── */}
-        <div
-          data-animate
-          data-delay="3"
-          style={{
-            background: 'rgba(200,149,95,0.08)',
-            border: '1px solid rgba(200,149,95,0.30)',
-            borderRadius: '10px',
-            padding: '1.4rem 2rem',
-            textAlign: 'center',
-            marginBottom: '3.5rem',
-          }}
-        >
-          <p style={{
-            fontFamily: 'Cinzel, serif',
-            fontSize: 'clamp(1rem, 2.8vw, 1.25rem)',
-            fontWeight: 700,
-            color: '#C8955F',
-            lineHeight: 1.5,
-            letterSpacing: '0.02em',
-          }}>
-            {renderLines(block2.answer)}
-          </p>
-        </div>
-
-        {/* ── (C) Cards — 1 col mobile / 2 col desktop ── */}
-        <div
-          data-animate
-          data-delay="1"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 17rem), 1fr))',
-            gap: '1.25rem',
-            marginBottom: '3rem',
-          }}
-        >
-          {/* Card 1 — Spiritual marketplace */}
-          <div style={{
-            background: 'rgba(255,255,255,0.04)',
-            border: '1px solid rgba(200,149,95,0.18)',
-            borderRadius: '12px',
-            padding: '1.75rem 1.5rem',
-            backdropFilter: 'blur(4px)',
-          }}>
-            <div style={{ marginBottom: '1rem' }}>
-              <IconWaves />
-            </div>
-            <p style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 'clamp(0.9rem, 2.2vw, 1rem)',
-              lineHeight: 1.8,
-              color: '#E8E0C9',
-              opacity: 0.82,
-            }}>
-              {block2.card1}
-            </p>
-          </div>
-
-          {/* Card 2 — You sing words */}
-          <div style={{
-            background: 'rgba(255,255,255,0.04)',
-            border: '1px solid rgba(200,149,95,0.18)',
-            borderRadius: '12px',
-            padding: '1.75rem 1.5rem',
-            backdropFilter: 'blur(4px)',
-          }}>
-            <div style={{ marginBottom: '1rem' }}>
-              <IconWords />
-            </div>
-            <p style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 'clamp(0.9rem, 2.2vw, 1rem)',
-              lineHeight: 1.8,
-              color: '#E8E0C9',
-              opacity: 0.82,
-            }}>
-              {renderLines(block2.card2)}
-            </p>
-          </div>
-        </div>
-
-        <OrnaSep />
-
-        {/* ── (D) Callout — "Not connection. Repetition." ── */}
-        <div
-          data-animate
-          data-delay="2"
-          style={{
-            textAlign: 'center',
-            padding: '2.5rem 1rem',
-            marginBottom: '2.5rem',
-          }}
-        >
-          {/* Minimal open-quote mark */}
+          {/* Marca d'água "II" */}
           <div aria-hidden="true" style={{
-            fontFamily: 'Georgia, serif',
-            fontSize: '3rem',
-            lineHeight: 1,
-            color: '#5B9C9B',
-            opacity: 0.35,
-            marginBottom: '0.5rem',
-            userSelect: 'none',
-          }}>
-            "
-          </div>
-          <p style={{
+            position: 'absolute',
+            top: '-0.5rem',
+            right: '1.5rem',
             fontFamily: 'Cinzel, serif',
-            fontSize: 'clamp(1.2rem, 3.5vw, 1.65rem)',
-            fontWeight: 700,
-            color: '#E8E0C9',
-            lineHeight: 1.45,
-            letterSpacing: '0.02em',
-          }}>
-            {renderLines(block2.callout)}
-          </p>
-        </div>
+            fontWeight: 900,
+            fontSize: '9rem',
+            color: '#8C5737',
+            opacity: 0.04,
+            lineHeight: 1,
+            userSelect: 'none',
+            pointerEvents: 'none',
+          }}>II</div>
 
-        {/* ── (E) Final quote — golden border ── */}
-        <div
-          data-animate
-          data-delay="3"
-          style={{
-            borderTop: '1px solid rgba(200,149,95,0.30)',
-            borderBottom: '1px solid rgba(200,149,95,0.30)',
-            padding: '1.75rem 1.5rem',
-            textAlign: 'center',
-          }}
-        >
-          <p style={{
-            fontFamily: 'Inter, sans-serif',
-            fontStyle: 'italic',
-            fontSize: 'clamp(0.9rem, 2.4vw, 1.05rem)',
-            lineHeight: 1.75,
-            color: '#E8E0C9',
-            opacity: 0.75,
+          {/* Título + Lead */}
+          <div style={{ textAlign: 'center', marginBottom: '0.5rem', position: 'relative' }}>
+            <h2 style={{
+              fontFamily: 'Cinzel, serif',
+              fontWeight: 700,
+              fontSize: 'clamp(1.35rem, 4vw, 1.9rem)',
+              color: '#1D1D1D',
+              lineHeight: 1.3,
+              letterSpacing: '0.01em',
+              marginBottom: '1.5rem',
+            }}>
+              {block2.title}
+            </h2>
+            <p style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: 'clamp(1rem, 2.6vw, 1.12rem)',
+              lineHeight: 1.9,
+              color: '#1D1D1D',
+              opacity: 0.68,
+              maxWidth: '32rem',
+              margin: '0 auto',
+            }}>
+              {renderLines(block2.lead)}
+            </p>
+          </div>
+
+          <DiamondRule />
+
+          {/* Transition */}
+          <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+            <p style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: 'clamp(0.78rem, 1.8vw, 0.86rem)',
+              color: '#1D1D1D',
+              opacity: 0.38,
+              letterSpacing: '0.06em',
+              textTransform: 'uppercase',
+            }}>
+              {block2.transition}
+            </p>
+          </div>
+
+          {/* Doubt */}
+          <div style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
+            <p style={{
+              fontFamily: 'Cinzel, serif',
+              fontSize: 'clamp(1.5rem, 4.2vw, 2.1rem)',
+              fontWeight: 700,
+              color: '#1D1D1D',
+              lineHeight: 1.3,
+              letterSpacing: '0.01em',
+            }}>
+              {block2.doubt}
+            </p>
+          </div>
+
+          {/* Answer */}
+          <div style={{
+            borderLeft: '3px solid #8C5737',
+            paddingLeft: '1.5rem',
+            marginBottom: '2.5rem',
+            maxWidth: '28rem',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            textAlign: 'left',
           }}>
-            {renderLines(block2.quote)}
-          </p>
+            <p style={{
+              fontFamily: 'Cinzel, serif',
+              fontSize: 'clamp(0.95rem, 2.5vw, 1.08rem)',
+              fontWeight: 700,
+              color: '#8C5737',
+              lineHeight: 1.6,
+              letterSpacing: '0.02em',
+            }}>
+              {renderLines(block2.answer)}
+            </p>
+          </div>
+
+          <DiamondRule />
+
+          {/* Cards grid */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 16rem), 1fr))',
+            gap: '1rem',
+            marginBottom: '0.5rem',
+          }}>
+            <div style={{
+              background: 'rgba(223,211,199,0.50)',
+              border: '1px solid rgba(140,87,55,0.12)',
+              borderTop: '2px solid #8C5737',
+              borderRadius: '0 0 12px 12px',
+              padding: '1.5rem 1.4rem',
+            }}>
+              <div style={{ marginBottom: '1rem' }}><IconChant /></div>
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: 'clamp(0.87rem, 2vw, 0.96rem)',
+                lineHeight: 1.85,
+                color: '#1D1D1D',
+                opacity: 0.70,
+              }}>
+                {block2.card1}
+              </p>
+            </div>
+
+            <div style={{
+              background: 'rgba(223,211,199,0.50)',
+              border: '1px solid rgba(140,87,55,0.12)',
+              borderTop: '2px solid #8C5737',
+              borderRadius: '0 0 12px 12px',
+              padding: '1.5rem 1.4rem',
+            }}>
+              <div style={{ marginBottom: '1rem' }}><IconVoice /></div>
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: 'clamp(0.87rem, 2vw, 0.96rem)',
+                lineHeight: 1.85,
+                color: '#1D1D1D',
+                opacity: 0.70,
+              }}>
+                {renderLines(block2.card2)}
+              </p>
+            </div>
+          </div>
+
+          <DiamondRule />
+
+          {/* Callout */}
+          <div style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
+            <p style={{
+              fontFamily: 'Cinzel, serif',
+              fontSize: 'clamp(1.1rem, 3vw, 1.5rem)',
+              fontWeight: 700,
+              color: '#1D1D1D',
+              lineHeight: 1.45,
+              letterSpacing: '0.015em',
+            }}>
+              {renderLines(block2.callout)}
+            </p>
+          </div>
+
+          {/* Quote */}
+          <div style={{
+            borderLeft: '2px solid rgba(140,87,55,0.35)',
+            paddingLeft: '1.5rem',
+            maxWidth: '32rem',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+          }}>
+            <p style={{
+              fontFamily: 'Inter, sans-serif',
+              fontStyle: 'italic',
+              fontSize: 'clamp(0.87rem, 2.2vw, 0.98rem)',
+              lineHeight: 1.82,
+              color: '#1D1D1D',
+              opacity: 0.50,
+            }}>
+              {renderLines(block2.quote)}
+            </p>
+          </div>
+
         </div>
+        {/* ── fim do card ── */}
 
       </div>
 
-      {/* ── Bottom tribal divider ── */}
-      <TribalPatternMajor className="w-full" />
+      <div aria-hidden="true" style={{ height: '1px', background: 'rgba(140,87,55,0.22)', width: '100%' }} />
+
     </section>
   )
 }

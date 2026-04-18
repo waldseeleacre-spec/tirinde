@@ -97,7 +97,7 @@ export function Block12Closing() {
             fontFamily: "'Cinzel', Georgia, serif",
             fontSize: 'clamp(1.05rem, 2.8vw, 1.35rem)',
             fontWeight: 400,
-            color: 'rgba(232,224,201,0.75)',
+            color: 'rgba(230,227,220,0.75)',
             letterSpacing: '0.03em',
             lineHeight: 1.65,
             marginBottom: '0.55rem',
@@ -114,7 +114,7 @@ export function Block12Closing() {
             fontFamily: "'Cinzel', Georgia, serif",
             fontSize: 'clamp(1.6rem, 4.5vw, 2.6rem)',
             fontWeight: 700,
-            color: '#E8E0C9',
+            color: '#E6E3DC',
             letterSpacing: '0.02em',
             lineHeight: 1.25,
             marginBottom: '3.5rem',
@@ -136,27 +136,27 @@ export function Block12Closing() {
               display: 'block',
               width: '100%',
               padding: '1.1rem 2rem',
-              background: 'linear-gradient(135deg, #D4A96A 0%, #C8955F 55%, #B8834D 100%)',
-              border: '1px solid rgba(232,224,201,0.30)',
+              background: '#8C5737',
+              border: '1px solid rgba(230,227,220,0.30)',
               borderRadius: '9999px',
               fontFamily: "'Cinzel', Georgia, serif",
               fontSize: 'clamp(1rem, 2.2vw, 1.15rem)',
               fontWeight: 700,
-              color: '#1C2E20',
+              color: '#E6E3DC',
               letterSpacing: '0.04em',
               cursor: 'pointer',
               boxShadow:
-                '0 0 28px rgba(200,149,95,0.28), 0 4px 18px rgba(0,0,0,0.35)',
+                '0 0 28px rgba(140,87,55,0.28), 0 4px 18px rgba(0,0,0,0.35)',
               transition: 'box-shadow 0.25s ease, transform 0.18s ease',
             }}
             onMouseEnter={e => {
               ;(e.currentTarget as HTMLButtonElement).style.boxShadow =
-                '0 0 48px rgba(200,149,95,0.50), 0 6px 24px rgba(0,0,0,0.40)'
+                '0 0 48px rgba(140,87,55,0.50), 0 6px 24px rgba(0,0,0,0.40)'
               ;(e.currentTarget as HTMLButtonElement).style.transform = 'translateY(-2px)'
             }}
             onMouseLeave={e => {
               ;(e.currentTarget as HTMLButtonElement).style.boxShadow =
-                '0 0 28px rgba(200,149,95,0.28), 0 4px 18px rgba(0,0,0,0.35)'
+                '0 0 28px rgba(140,87,55,0.28), 0 4px 18px rgba(0,0,0,0.35)'
               ;(e.currentTarget as HTMLButtonElement).style.transform = 'translateY(0)'
             }}
             onClick={scrollToComparison}
@@ -171,7 +171,7 @@ export function Block12Closing() {
               marginTop: '1rem',
               fontFamily: "'Inter', sans-serif",
               fontSize: '0.8rem',
-              color: 'rgba(232,224,201,0.55)',
+              color: 'rgba(230,227,220,0.55)',
               letterSpacing: '0.04em',
               lineHeight: 1.5,
             }}
@@ -193,15 +193,15 @@ export function Block12Closing() {
           }}
           aria-hidden="true"
         >
-          <div style={{ width: '48px', height: '1px', background: '#5B9C9B' }} />
+          <div style={{ width: '48px', height: '1px', background: '#8C5737' }} />
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path
               d="M8 0 L9.5 6 L16 8 L9.5 10 L8 16 L6.5 10 L0 8 L6.5 6 Z"
-              fill="#5B9C9B"
+              fill="#8C5737"
               opacity="0.8"
             />
           </svg>
-          <div style={{ width: '48px', height: '1px', background: '#5B9C9B' }} />
+          <div style={{ width: '48px', height: '1px', background: '#8C5737' }} />
         </div>
       </div>
     </section>

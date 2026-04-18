@@ -1,8 +1,3 @@
-// ─── Block 09 — HOW IT WORKS (VOZ Method) ────────────────────
-// Layout: 2-col desktop (VOZ diagram LEFT | text RIGHT) · stacked mobile
-// Assets: VOZ.png (1792×2400 portrait)
-// ─────────────────────────────────────────────────────────────
-
 import { useEffect, useRef } from 'react'
 import { useLang } from '../i18n/LangContext'
 import { translations } from '../i18n/translations'
@@ -40,7 +35,6 @@ export function Block09HowItWorks() {
     transition: 'opacity 0.65s ease, transform 0.65s ease',
   }
 
-  // Parse "V — Vibration: text..." → { letter: "V", rest: "Vibration: text..." }
   function parseItem(raw: string) {
     const parts = raw.split(' \u2014 ')
     return { letter: parts[0], rest: parts.slice(1).join(' \u2014 ') }
@@ -53,15 +47,15 @@ export function Block09HowItWorks() {
   ]
 
   return (
-    <section id="block9" style={{ background: '#284C42', position: 'relative' }}>
+    <section id="block9" style={{ background: '#1D1D1D', position: 'relative' }}>
 
-      {/* ── Top divider ── */}
+      {/* Divider topo */}
       <div aria-hidden="true" style={{ display: 'flex', alignItems: 'center' }}>
-        <span style={{ flex: 1, height: '1px', background: 'rgba(200,149,95,0.18)' }} />
+        <span style={{ flex: 1, height: '1px', background: 'rgba(230,227,220,0.08)' }} />
         <svg width="8" height="8" viewBox="0 0 8 8" style={{ margin: '0 10px' }}>
-          <polygon points="4,0 8,4 4,8 0,4" fill="none" stroke="#C8955F" strokeWidth="1" opacity="0.38" />
+          <polygon points="4,0 8,4 4,8 0,4" fill="none" stroke="#8C5737" strokeWidth="1" opacity="0.45" />
         </svg>
-        <span style={{ flex: 1, height: '1px', background: 'rgba(200,149,95,0.18)' }} />
+        <span style={{ flex: 1, height: '1px', background: 'rgba(230,227,220,0.08)' }} />
       </div>
 
       <div
@@ -73,54 +67,52 @@ export function Block09HowItWorks() {
         }}
       >
 
-        {/* ── Eyebrow + Title ── */}
-        <div
-          data-b9-animate
-          data-delay="1"
-          style={{ ...anim, textAlign: 'center', marginBottom: '3.5rem' }}
-        >
+        {/* Eyebrow + Title */}
+        <div data-b9-animate data-delay="1" style={{ ...anim, textAlign: 'center', marginBottom: '3.5rem' }}>
           <p style={{
             fontFamily: "'Cinzel', serif",
             fontSize: '0.65rem',
             letterSpacing: '0.22em',
             textTransform: 'uppercase' as const,
-            color: '#5B9C9B',
-            opacity: 0.70,
+            color: '#8C5737',
+            opacity: 0.75,
             marginBottom: '1rem',
           }}>— IX —</p>
           <h2 style={{
             fontFamily: "'Cinzel', serif",
             fontWeight: 700,
             fontSize: 'clamp(1.2rem, 3.5vw, 1.8rem)',
-            color: '#E8E0C9',
+            color: '#E6E3DC',
             letterSpacing: '0.02em',
             lineHeight: 1.35,
           }}>{t.title}</h2>
+          <div aria-hidden="true" style={{
+            width: '3rem', height: '1px',
+            background: 'rgba(140,87,55,0.40)',
+            margin: '1.5rem auto 0',
+          }} />
         </div>
 
-        {/* ── 2-col: diagram LEFT | items RIGHT ── */}
+        {/* 2-col: imagem VOZ | itens */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 22rem), 1fr))',
-          gap: 'clamp(2rem, 5vw, 3.5rem)',
+          gap: 'clamp(2rem, 5vw, 4rem)',
           alignItems: 'center',
         }}>
 
-          {/* LEFT: VOZ Diagram */}
-          <div
-            data-b9-animate
-            data-delay="1"
-            style={{
-              ...anim,
-              borderRadius: '16px',
-              overflow: 'hidden',
-              border: '1px solid rgba(200,149,95,0.18)',
-              boxShadow: '0 8px 48px rgba(0,0,0,0.30)',
-              maxWidth: '28rem',
-              margin: '0 auto',
-              width: '100%',
-            }}
-          >
+          {/* Imagem VOZ — com glow e sombra profunda */}
+          <div data-b9-animate data-delay="1" style={{
+            ...anim,
+            borderRadius: '20px',
+            overflow: 'hidden',
+            border: '1px solid rgba(140,87,55,0.22)',
+            borderTop: '2px solid #8C5737',
+            boxShadow: '0 20px 80px rgba(0,0,0,0.60), 0 0 40px rgba(140,87,55,0.08)',
+            maxWidth: '28rem',
+            margin: '0 auto',
+            width: '100%',
+          }}>
             <img
               src="/assets/VOZ.png"
               alt="VOZ Method — Vibração, Origem, Zelo"
@@ -128,8 +120,8 @@ export function Block09HowItWorks() {
             />
           </div>
 
-          {/* RIGHT: V / O / Z items + callout */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
+          {/* V / O / Z + callout */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
 
             {vozItems.map(({ letter, rest, delay }, i) => (
               <div
@@ -141,92 +133,95 @@ export function Block09HowItWorks() {
                   display: 'flex',
                   gap: '1.25rem',
                   alignItems: 'flex-start',
+                  background: 'rgba(255,255,255,0.03)',
+                  border: '1px solid rgba(230,227,220,0.07)',
+                  borderLeft: '2px solid rgba(140,87,55,0.45)',
+                  borderRadius: '0 12px 12px 0',
+                  padding: '1.25rem 1.5rem',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.20)',
                 }}
               >
-                {/* Big letter */}
-                <span style={{
-                  fontFamily: "'Cinzel', serif",
-                  fontWeight: 900,
-                  fontSize: 'clamp(2.2rem, 5vw, 2.8rem)',
-                  color: '#C8955F',
-                  lineHeight: 1,
+                {/* Letra — badge */}
+                <div style={{
                   flexShrink: 0,
-                  width: '2.2rem',
-                  textAlign: 'center',
-                  opacity: 0.90,
-                  marginTop: '2px',
-                }}>{letter}</span>
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '2.8rem',
+                  height: '2.8rem',
+                  background: 'rgba(140,87,55,0.10)',
+                  border: '1px solid rgba(140,87,55,0.28)',
+                  borderRadius: '8px',
+                }}>
+                  <span style={{
+                    fontFamily: "'Cinzel', serif",
+                    fontWeight: 900,
+                    fontSize: 'clamp(1.5rem, 3.5vw, 1.9rem)',
+                    color: '#8C5737',
+                    lineHeight: 1,
+                    opacity: 1,
+                  }}>{letter}</span>
+                </div>
 
-                {/* Thin vertical rule */}
-                <span style={{
-                  width: '1px',
-                  alignSelf: 'stretch',
-                  background: 'rgba(200,149,95,0.22)',
-                  flexShrink: 0,
-                  marginTop: '4px',
-                }} />
-
-                {/* Text */}
+                {/* Texto */}
                 <p style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: 'clamp(0.9rem, 2.2vw, 1rem)',
+                  fontSize: 'clamp(0.90rem, 2.2vw, 1rem)',
                   lineHeight: 1.80,
-                  color: '#E8E0C9',
+                  color: '#E6E3DC',
                   opacity: 0.82,
-                  paddingTop: '2px',
+                  paddingTop: '0.45rem',
                 }}>{rest}</p>
               </div>
             ))}
 
-            {/* Callout — conclusion */}
+            {/* Callout — conclusão */}
             <div
               data-b9-animate
               data-delay="5"
               style={{
                 ...anim,
-                borderLeft: '2px solid rgba(200,149,95,0.65)',
-                paddingLeft: '1.25rem',
-                paddingTop: '1.1rem',
-                paddingBottom: '1.1rem',
-                background: 'rgba(0,0,0,0.13)',
-                borderRadius: '0 10px 10px 0',
-                marginTop: '0.25rem',
+                background: 'rgba(140,87,55,0.10)',
+                border: '1px solid rgba(140,87,55,0.30)',
+                borderRadius: '12px',
+                padding: '1.5rem 1.75rem',
+                marginTop: '0.5rem',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '1rem',
+                boxShadow: '0 4px 24px rgba(140,87,55,0.08)',
               }}
             >
+              <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" style={{ flexShrink: 0, marginTop: '2px' }}>
+                <polygon points="9,1 17,9 9,17 1,9" fill="none" stroke="#8C5737" strokeWidth="1.1" opacity="0.60" />
+                <circle cx="9" cy="9" r="2.5" fill="#8C5737" opacity="0.45" />
+              </svg>
               <p style={{
                 fontFamily: "'Cinzel', serif",
                 fontWeight: 600,
                 fontStyle: 'italic' as const,
-                fontSize: 'clamp(0.95rem, 2.4vw, 1.1rem)',
-                color: '#E8E0C9',
+                fontSize: 'clamp(0.92rem, 2.3vw, 1.05rem)',
+                color: '#E6E3DC',
                 letterSpacing: '0.01em',
-                lineHeight: 1.55,
+                lineHeight: 1.58,
+                opacity: 0.90,
               }}>{t.callout}</p>
             </div>
 
           </div>
         </div>
 
-        {/* Closing dots */}
-        <div aria-hidden="true" style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '6px',
-          marginTop: '3.5rem',
-        }}>
-          <div style={{ height: '1px', width: '5rem', background: 'rgba(200,149,95,0.18)' }} />
-          <div style={{ display: 'flex', gap: '6px' }}>
-            {[0.28, 0.45, 0.28].map((op, i) => (
-              <span key={i} style={{
-                width: '3px', height: '3px', borderRadius: '50%',
-                background: `rgba(200,149,95,${op})`, display: 'block',
-              }} />
-            ))}
-          </div>
-        </div>
-
       </div>
+
+      {/* Divider fundo */}
+      <div aria-hidden="true" style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ flex: 1, height: '1px', background: 'rgba(230,227,220,0.08)' }} />
+        <svg width="8" height="8" viewBox="0 0 8 8" style={{ margin: '0 10px' }}>
+          <polygon points="4,0 8,4 4,8 0,4" fill="none" stroke="#8C5737" strokeWidth="1" opacity="0.45" />
+        </svg>
+        <span style={{ flex: 1, height: '1px', background: 'rgba(230,227,220,0.08)' }} />
+      </div>
+
     </section>
   )
 }

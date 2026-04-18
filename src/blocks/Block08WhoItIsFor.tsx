@@ -13,38 +13,35 @@ function WhoCard({ title, body, delay }: CardProps) {
       data-b8-animate
       data-delay={delay}
       style={{
-        background: 'rgba(255,255,255,0.04)',
-        border: '1px solid rgba(232,224,201,0.10)',
-        borderTop: '2px solid rgba(200,149,95,0.45)',
+        background: 'rgba(255,255,255,0.65)',
+        border: '1px solid rgba(140,87,55,0.14)',
+        borderTop: '2px solid rgba(140,87,55,0.45)',
         borderRadius: '12px',
         padding: '1.75rem 1.5rem',
         display: 'flex',
         flexDirection: 'column',
         gap: '0.75rem',
+        boxShadow: '0 8px 32px rgba(29,29,29,0.08)',
       }}
     >
-      <h3
-        style={{
-          fontFamily: "'Cinzel', Georgia, serif",
-          fontSize: 'clamp(0.9rem, 2vw, 1.05rem)',
-          fontWeight: 700,
-          color: '#E8E0C9',
-          letterSpacing: '0.02em',
-          lineHeight: 1.35,
-          margin: 0,
-        }}
-      >
+      <h3 style={{
+        fontFamily: "'Cinzel', Georgia, serif",
+        fontSize: 'clamp(0.9rem, 2vw, 1.05rem)',
+        fontWeight: 700,
+        color: '#1D1D1D',
+        letterSpacing: '0.02em',
+        lineHeight: 1.35,
+        margin: 0,
+      }}>
         {title}
       </h3>
-      <p
-        style={{
-          fontFamily: "'Inter', sans-serif",
-          fontSize: 'clamp(0.88rem, 1.8vw, 0.95rem)',
-          lineHeight: 1.75,
-          color: 'rgba(232,224,201,0.72)',
-          margin: 0,
-        }}
-      >
+      <p style={{
+        fontFamily: "'Inter', sans-serif",
+        fontSize: 'clamp(0.88rem, 1.8vw, 0.95rem)',
+        lineHeight: 1.75,
+        color: 'rgba(29,29,29,0.65)',
+        margin: 0,
+      }}>
         {body}
       </p>
     </div>
@@ -56,27 +53,22 @@ export function Block08WhoItIsFor() {
   const t = allT.block8
 
   return (
-    <section
-      id="block08"
-      style={{ background: '#284C42', position: 'relative' }}
-    >
-      {/* Top divider */}
+    <section id="block08" style={{ background: '#E6E3DC', position: 'relative' }}>
+
       <div aria-hidden="true" style={{ display: 'flex', alignItems: 'center' }}>
-        <span style={{ flex: 1, height: '1px', background: 'rgba(200,149,95,0.18)' }} />
+        <span style={{ flex: 1, height: '1px', background: 'rgba(140,87,55,0.18)' }} />
         <svg width="8" height="8" viewBox="0 0 8 8" style={{ margin: '0 10px' }}>
-          <polygon points="4,0 8,4 4,8 0,4" fill="none" stroke="#C8955F" strokeWidth="1" opacity="0.38" />
+          <polygon points="4,0 8,4 4,8 0,4" fill="none" stroke="#8C5737" strokeWidth="1" opacity="0.38" />
         </svg>
-        <span style={{ flex: 1, height: '1px', background: 'rgba(200,149,95,0.18)' }} />
+        <span style={{ flex: 1, height: '1px', background: 'rgba(140,87,55,0.18)' }} />
       </div>
 
-      <div
-        style={{
-          maxWidth: '56rem',
-          margin: '0 auto',
-          padding: '6rem clamp(1.5rem, 5vw, 3rem)',
-        }}
-      >
-        {/* Eyebrow */}
+      <div style={{
+        maxWidth: '56rem',
+        margin: '0 auto',
+        padding: '6rem clamp(1.5rem, 5vw, 3rem)',
+      }}>
+
         <p
           className="b8-animate"
           data-b8-animate
@@ -86,8 +78,8 @@ export function Block08WhoItIsFor() {
             fontSize: '0.65rem',
             letterSpacing: '0.22em',
             textTransform: 'uppercase',
-            color: '#5B9C9B',
-            opacity: 0.75,
+            color: '#8C5737',
+            opacity: 0.80,
             textAlign: 'center',
             marginBottom: '1rem',
           }}
@@ -95,7 +87,6 @@ export function Block08WhoItIsFor() {
           — VIII —
         </p>
 
-        {/* Section title */}
         <h2
           data-b8-animate
           data-delay={0}
@@ -103,7 +94,7 @@ export function Block08WhoItIsFor() {
             fontFamily: "'Cinzel', Georgia, serif",
             fontWeight: 700,
             fontSize: 'clamp(1.6rem, 4.5vw, 2.4rem)',
-            color: '#E8E0C9',
+            color: '#1D1D1D',
             letterSpacing: '0.01em',
             lineHeight: 1.25,
             textAlign: 'center',
@@ -114,7 +105,6 @@ export function Block08WhoItIsFor() {
           {t.sectionTitle}
         </h2>
 
-        {/* 3-card grid */}
         <div
           data-b8-animate
           data-delay={1}

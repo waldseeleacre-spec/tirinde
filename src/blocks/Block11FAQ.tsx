@@ -1,8 +1,3 @@
-// ─── Block 11 — FAQ (Accordion) ──────────────────────────────
-// Accordion: single item open at a time; first item open by default
-// Accessibility: button + aria-expanded + aria-controls
-// ─────────────────────────────────────────────────────────────
-
 import { useState, useEffect, useRef } from 'react'
 import { useLang } from '../i18n/LangContext'
 import { translations } from '../i18n/translations'
@@ -55,76 +50,58 @@ export function Block11FAQ() {
   }
 
   return (
-    <section id="block11" style={{ background: '#284C42', position: 'relative' }}>
+    <section id="block11" style={{ background: '#E6E3DC', position: 'relative' }}>
 
-      {/* ── Top divider ── */}
       <div aria-hidden="true" style={{ display: 'flex', alignItems: 'center' }}>
-        <span style={{ flex: 1, height: '1px', background: 'rgba(200,149,95,0.18)' }} />
+        <span style={{ flex: 1, height: '1px', background: 'rgba(140,87,55,0.18)' }} />
         <svg width="8" height="8" viewBox="0 0 8 8" style={{ margin: '0 10px' }}>
-          <polygon points="4,0 8,4 4,8 0,4" fill="none" stroke="#C8955F" strokeWidth="1" opacity="0.38" />
+          <polygon points="4,0 8,4 4,8 0,4" fill="none" stroke="#8C5737" strokeWidth="1" opacity="0.38" />
         </svg>
-        <span style={{ flex: 1, height: '1px', background: 'rgba(200,149,95,0.18)' }} />
+        <span style={{ flex: 1, height: '1px', background: 'rgba(140,87,55,0.18)' }} />
       </div>
 
-      <div
-        ref={containerRef}
-        style={{
-          maxWidth: '56rem',
-          margin: '0 auto',
-          padding: '5rem clamp(1.5rem, 5vw, 3rem) 5.5rem',
-        }}
-      >
+      <div ref={containerRef} style={{
+        maxWidth: '56rem',
+        margin: '0 auto',
+        padding: '5rem clamp(1.5rem, 5vw, 3rem) 5.5rem',
+      }}>
 
-        {/* ── Eyebrow + Title ── */}
-        <div
-          data-b11-animate
-          data-delay="1"
-          style={{ ...anim, textAlign: 'center', marginBottom: '3rem' }}
-        >
+        <div data-b11-animate data-delay="1" style={{ ...anim, textAlign: 'center', marginBottom: '3rem' }}>
           <p style={{
             fontFamily: "'Cinzel', serif",
             fontSize: '0.65rem',
             letterSpacing: '0.22em',
             textTransform: 'uppercase' as const,
-            color: '#5B9C9B',
-            opacity: 0.70,
+            color: '#8C5737',
+            opacity: 0.80,
             marginBottom: '1rem',
           }}>— XI —</p>
           <h2 style={{
             fontFamily: "'Cinzel', serif",
             fontWeight: 700,
             fontSize: 'clamp(1.2rem, 3.5vw, 1.7rem)',
-            color: '#E8E0C9',
+            color: '#1D1D1D',
             letterSpacing: '0.03em',
             lineHeight: 1.35,
           }}>{t.sectionTitle}</h2>
         </div>
 
-        {/* ── FAQ accordion container ── */}
-        <div
-          data-b11-animate
-          data-delay="2"
-          style={{
-            ...anim,
-            background: 'rgba(255,255,255,0.035)',
-            border: '1px solid rgba(200,149,95,0.18)',
-            borderRadius: '16px',
-            boxShadow: '0 4px 32px rgba(0,0,0,0.20)',
-            overflow: 'hidden',
-          }}
-        >
+        <div data-b11-animate data-delay="2" style={{
+          ...anim,
+          background: 'rgba(255,255,255,0.70)',
+          border: '1px solid rgba(140,87,55,0.18)',
+          borderRadius: '16px',
+          boxShadow: '0 8px 32px rgba(29,29,29,0.10)',
+          overflow: 'hidden',
+        }}>
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i
             return (
-              <div
-                key={i}
-                style={{
-                  borderBottom: i < faqs.length - 1
-                    ? '1px solid rgba(200,149,95,0.10)'
-                    : 'none',
-                }}
-              >
-                {/* ── Question button ── */}
+              <div key={i} style={{
+                borderBottom: i < faqs.length - 1
+                  ? '1px solid rgba(140,87,55,0.10)'
+                  : 'none',
+              }}>
                 <button
                   id={`faq-btn-${i}`}
                   aria-expanded={isOpen}
@@ -137,7 +114,7 @@ export function Block11FAQ() {
                     justifyContent: 'space-between',
                     gap: '1rem',
                     padding: 'clamp(1.1rem, 3vw, 1.4rem) clamp(1.25rem, 4vw, 2rem)',
-                    background: isOpen ? 'rgba(200,149,95,0.05)' : 'transparent',
+                    background: isOpen ? 'rgba(140,87,55,0.05)' : 'transparent',
                     border: 'none',
                     cursor: 'pointer',
                     textAlign: 'left' as const,
@@ -145,22 +122,20 @@ export function Block11FAQ() {
                     outline: 'none',
                   }}
                   onFocus={(e) => {
-                    e.currentTarget.style.boxShadow = 'inset 0 0 0 1px rgba(200,149,95,0.28)'
+                    e.currentTarget.style.boxShadow = 'inset 0 0 0 1px rgba(140,87,55,0.28)'
                   }}
                   onBlur={(e) => {
                     e.currentTarget.style.boxShadow = 'none'
                   }}
                 >
-                  {/* Question text */}
                   <span style={{
                     fontFamily: "'Inter', sans-serif",
                     fontWeight: 500,
                     fontSize: 'clamp(0.92rem, 2.3vw, 1rem)',
-                    color: '#E8E0C9',
+                    color: '#1D1D1D',
                     lineHeight: 1.55,
                   }}>{faq.q}</span>
 
-                  {/* Toggle icon: + rotates to × on open */}
                   <span
                     aria-hidden="true"
                     style={{
@@ -171,8 +146,8 @@ export function Block11FAQ() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       borderRadius: '50%',
-                      border: '1px solid rgba(200,149,95,0.32)',
-                      color: '#C8955F',
+                      border: '1px solid rgba(140,87,55,0.32)',
+                      color: '#8C5737',
                       fontSize: '1.05rem',
                       fontWeight: 300,
                       lineHeight: 1,
@@ -183,7 +158,6 @@ export function Block11FAQ() {
                   >+</span>
                 </button>
 
-                {/* ── Answer panel ── */}
                 <div
                   id={`faq-panel-${i}`}
                   role="region"
@@ -195,16 +169,14 @@ export function Block11FAQ() {
                     transition: 'max-height 0.28s ease, opacity 0.22s ease',
                   }}
                 >
-                  <div style={{
-                    padding: `0 clamp(1.25rem, 4vw, 2rem) clamp(1.1rem, 3vw, 1.4rem)`,
-                  }}>
+                  <div style={{ padding: `0 clamp(1.25rem, 4vw, 2rem) clamp(1.1rem, 3vw, 1.4rem)` }}>
                     <p style={{
                       fontFamily: "'Inter', sans-serif",
                       fontSize: 'clamp(0.87rem, 2.1vw, 0.95rem)',
                       lineHeight: 1.88,
-                      color: '#E8E0C9',
-                      opacity: 0.70,
-                      borderLeft: '2px solid rgba(200,149,95,0.28)',
+                      color: '#1D1D1D',
+                      opacity: 0.62,
+                      borderLeft: '2px solid rgba(140,87,55,0.28)',
                       paddingLeft: '1rem',
                     }}>{faq.a}</p>
                   </div>
@@ -215,24 +187,6 @@ export function Block11FAQ() {
           })}
         </div>
 
-        {/* ── Closing dots ── */}
-        <div aria-hidden="true" style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '6px',
-          marginTop: '3.5rem',
-        }}>
-          <div style={{ height: '1px', width: '5rem', background: 'rgba(200,149,95,0.18)' }} />
-          <div style={{ display: 'flex', gap: '6px' }}>
-            {[0.28, 0.45, 0.28].map((op, i) => (
-              <span key={i} style={{
-                width: '3px', height: '3px', borderRadius: '50%',
-                background: `rgba(200,149,95,${op})`, display: 'block',
-              }} />
-            ))}
-          </div>
-        </div>
 
       </div>
     </section>

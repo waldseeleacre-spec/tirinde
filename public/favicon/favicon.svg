@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Fundo Carvão com cantos arredondados -->
+  <rect width="512" height="512" fill="#1D1D1D" rx="96"/>
+  <!-- Diamante externo — terracota -->
+  <polygon points="256,72 440,256 256,440 72,256" fill="none" stroke="#8C5737" stroke-width="18" stroke-linejoin="round" opacity="0.90"/>
+  <!-- Diamante interno — preenchido -->
+  <polygon points="256,148 364,256 256,364 148,256" fill="#8C5737" opacity="0.85"/>
+  <!-- Ponto central — cream -->
+  <circle cx="256" cy="256" r="38" fill="#E6E3DC" opacity="0.92"/>
+</svg>

@@ -12,31 +12,42 @@ export function LangSwitcher() {
 
   return (
     <div
-      className="flex items-center justify-center gap-0"
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '2px',
+        background: 'rgba(230,227,220,0.10)',
+        border: '1px solid rgba(230,227,220,0.18)',
+        borderRadius: '9999px',
+        padding: '4px',
+      }}
       role="navigation"
       aria-label="Language selector"
     >
-      {LANGS.map(({ code, label }, i) => (
-        <span key={code} className="flex items-center">
-          <button
-            onClick={() => setLang(code)}
-            aria-current={lang === code ? 'true' : undefined}
-            aria-label={`Switch to ${label}`}
-            className={[
-              'px-3 py-1 text-xs tracking-[0.18em] font-medium transition-all duration-200',
-              'font-body uppercase',
-              lang === code
-                ? 'text-[#C8955F]'
-                : 'text-[#E8E0C9] opacity-50 hover:opacity-80 hover:text-[#E8E0C9]',
-            ].join(' ')}
-            style={{ fontFamily: 'Inter, sans-serif' }}
-          >
-            {label}
-          </button>
-          {i < LANGS.length - 1 && (
-            <span className="text-[#C8955F] opacity-30 text-xs select-none">|</span>
-          )}
-        </span>
+      {LANGS.map(({ code, label }) => (
+        <button
+          key={code}
+          onClick={() => setLang(code)}
+          aria-current={lang === code ? 'true' : undefined}
+          aria-label={`Switch to ${label}`}
+          style={{
+            padding: '5px 14px',
+            borderRadius: '9999px',
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '0.7rem',
+            fontWeight: lang === code ? 600 : 400,
+            letterSpacing: '0.16em',
+            textTransform: 'uppercase',
+            border: 'none',
+            cursor: 'pointer',
+            transition: 'all 0.20s ease',
+            background: lang === code ? '#8C5737' : 'transparent',
+            color: lang === code ? '#E6E3DC' : 'rgba(230,227,220,0.75)',
+            boxShadow: lang === code ? '0 2px 8px rgba(140,87,55,0.30)' : 'none',
+          }}
+        >
+          {label}
+        </button>
       ))}
     </div>
   )

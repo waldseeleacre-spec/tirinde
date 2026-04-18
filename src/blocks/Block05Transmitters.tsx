@@ -1,46 +1,40 @@
-// ─── Block 05 — WHO TRANSMITS (Paká & Rurá) ─────────────────
-// Design: premium, human, ethical, ceremonial
-// 4 moments: (A) header+lead · (B) ethical callout · (C) photo+quotes card · (D) closing seal
-// Photo: public/assets/card 5.png
-// ─────────────────────────────────────────────────────────────
-
 import { useEffect, useRef } from 'react'
 import { useLang } from '../i18n/LangContext'
 import { translations } from '../i18n/translations'
 
-// ── Minimal divider: line + diamond ──────────────────────────
-function OrnaDivider() {
+function DiamondRule() {
   return (
-    <div
-      aria-hidden="true"
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '10px',
-        padding: '0',
-      }}
-    >
-      <span style={{ display: 'block', width: '40px', height: '1px', background: 'rgba(200,149,95,0.30)' }} />
+    <div aria-hidden="true" style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '10px',
+      margin: '2.5rem 0',
+    }}>
+      <span style={{ flex: 1, height: '1px', background: 'rgba(230,227,220,0.18)' }} />
       <svg width="8" height="8" viewBox="0 0 8 8">
-        <polygon points="4,0 8,4 4,8 0,4" fill="none" stroke="#C8955F" strokeWidth="1" opacity="0.45" />
+        <polygon points="4,0 8,4 4,8 0,4" fill="none" stroke="#8C5737" strokeWidth="1" opacity="0.60" />
       </svg>
-      <span style={{ display: 'block', width: '40px', height: '1px', background: 'rgba(200,149,95,0.30)' }} />
+      <span style={{ flex: 1, height: '1px', background: 'rgba(230,227,220,0.18)' }} />
     </div>
   )
 }
 
-// ── Minimal wave icon for quotes ─────────────────────────────
-function IconVoice({ color = '#5B9C9B', opacity = 0.6 }: { color?: string; opacity?: number }) {
+function IconFeather() {
   return (
-    <svg width="18" height="12" viewBox="0 0 18 12" fill="none" aria-hidden="true" style={{ opacity }}>
-      <path
-        d="M1 6 C3 2,4 10,6 6 C8 2,9 10,11 6 C13 2,14 10,16 6 C16.5 5,17 5.5,18 6"
-        stroke={color}
-        strokeWidth="1.2"
-        strokeLinecap="round"
-        fill="none"
-      />
+    <svg width="18" height="22" viewBox="0 0 18 22" fill="none" aria-hidden="true">
+      {/* Haste central */}
+      <line x1="9" y1="20" x2="9" y2="4" stroke="#8C5737" strokeWidth="1.3" strokeLinecap="round" opacity="0.90" />
+      {/* Barba direita */}
+      <path d="M9 6 C12 7, 15 9, 16 12" stroke="#E6E3DC" strokeWidth="1" strokeLinecap="round" opacity="0.70" />
+      <path d="M9 9 C12 10, 14 12, 15 15" stroke="#E6E3DC" strokeWidth="1" strokeLinecap="round" opacity="0.55" />
+      <path d="M9 12 C11 13, 13 15, 13 17" stroke="#E6E3DC" strokeWidth="1" strokeLinecap="round" opacity="0.38" />
+      {/* Barba esquerda */}
+      <path d="M9 6 C6 7, 3 9, 2 12" stroke="#E6E3DC" strokeWidth="1" strokeLinecap="round" opacity="0.70" />
+      <path d="M9 9 C6 10, 4 12, 3 15" stroke="#E6E3DC" strokeWidth="1" strokeLinecap="round" opacity="0.55" />
+      <path d="M9 12 C7 13, 5 15, 5 17" stroke="#E6E3DC" strokeWidth="1" strokeLinecap="round" opacity="0.38" />
+      {/* Ponta */}
+      <circle cx="9" cy="3.5" r="1.2" fill="#8C5737" opacity="0.80" />
     </svg>
   )
 }
@@ -49,7 +43,6 @@ export function Block05Transmitters() {
   const { lang } = useLang()
   const t = translations[lang].block5
 
-  // Scroll-reveal
   const containerRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const els = containerRef.current?.querySelectorAll<HTMLElement>('[data-b5-animate]')
@@ -82,12 +75,12 @@ export function Block05Transmitters() {
   return (
     <section
       id="block5"
-      style={{ background: '#284C42', position: 'relative' }}
+      style={{
+        background: 'radial-gradient(ellipse at 50% 15%, #8a8968 0%, #7A795B 65%)',
+        position: 'relative',
+      }}
     >
-      {/* ── Top divider (continuation from B4) ── */}
-      <div style={{ padding: '0 0 0', opacity: 0.6 }}>
-        <div style={{ height: '1px', background: 'rgba(200,149,95,0.20)', width: '100%' }} />
-      </div>
+      <div aria-hidden="true" style={{ height: '1px', background: 'rgba(230,227,220,0.14)', width: '100%' }} />
 
       <div
         ref={containerRef}
@@ -98,244 +91,226 @@ export function Block05Transmitters() {
         }}
       >
 
-        {/* ── (A) Eyebrow + Section label + Lead ────────────── */}
-        <div
-          data-b5-animate
-          data-delay="1"
-          style={{ ...animBase, textAlign: 'center', marginBottom: '3rem' }}
-        >
-          {/* Eyebrow numeral */}
-          <p
-            style={{
-              fontFamily: "'Cinzel', serif",
-              fontSize: '0.65rem',
-              letterSpacing: '0.22em',
-              textTransform: 'uppercase',
-              color: '#5B9C9B',
-              opacity: 0.75,
-              marginBottom: '1.5rem',
-            }}
-          >
-            — V —
-          </p>
+        {/* ── Eyebrow + Section label + Lead ── */}
+        <div data-b5-animate data-delay="1" style={{ ...animBase, textAlign: 'center', marginBottom: '3rem' }}>
+          <p style={{
+            fontFamily: "'Cinzel', serif",
+            fontSize: '0.65rem',
+            letterSpacing: '0.22em',
+            textTransform: 'uppercase',
+            color: '#8C5737',
+            opacity: 0.80,
+            marginBottom: '1.5rem',
+          }}>— V —</p>
 
-          {/* Section label — editorial small caps feel */}
-          <p
-            style={{
-              fontFamily: "'Cinzel', serif",
-              fontSize: 'clamp(0.65rem, 1.5vw, 0.75rem)',
-              letterSpacing: '0.30em',
-              textTransform: 'uppercase',
-              color: '#C8955F',
-              opacity: 0.80,
-              marginBottom: '1.5rem',
-            }}
-          >
+          <h2 style={{
+            fontFamily: "'Cinzel', serif",
+            fontWeight: 700,
+            fontSize: 'clamp(1.3rem, 3.5vw, 1.9rem)',
+            letterSpacing: '0.03em',
+            color: '#E6E3DC',
+            opacity: 1,
+            lineHeight: 1.35,
+            marginBottom: '1.5rem',
+          }}>
             {t.sectionLabel}
-          </p>
+          </h2>
 
-          {/* Lead — living guardians sentence */}
-          <p
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: 'clamp(1.1rem, 3vw, 1.35rem)',
-              lineHeight: 1.85,
-              color: '#E8E0C9',
-              opacity: 0.90,
-              maxWidth: '34rem',
-              margin: '0 auto',
-            }}
-          >
+          <p style={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: 'clamp(1.1rem, 3vw, 1.35rem)',
+            lineHeight: 1.85,
+            color: '#E6E3DC',
+            opacity: 0.90,
+            maxWidth: '34rem',
+            margin: '0 auto',
+          }}>
             {t.lead}
           </p>
         </div>
 
-        <OrnaDivider />
+        <DiamondRule />
 
-        {/* ── (B) Ethical authority callout ─────────────────── */}
-        <div
-          data-b5-animate
-          data-delay="2"
-          style={{
-            ...animBase,
-            margin: '2.5rem auto 3rem',
-            maxWidth: '34rem',
-            borderLeft: '2px solid rgba(200,149,95,0.65)',
-            background: 'rgba(0,0,0,0.10)',
-            borderRadius: '0 10px 10px 0',
-            padding: '1.5rem 1.75rem',
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: 'clamp(1rem, 2.5vw, 1.1rem)',
-              lineHeight: 1.85,
-              color: '#E8E0C9',
-              opacity: 0.88,
-              fontStyle: 'italic',
-            }}
-          >
-            {t.ethicalCallout}
-          </p>
-        </div>
-
-        {/* ── (C) Main card: Photo + Quotes ─────────────────── */}
-        <div
-          data-b5-animate
-          data-delay="1"
-          style={{
-            ...animBase,
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 20rem), 1fr))',
-            border: '1px solid rgba(200,149,95,0.22)',
-            borderRadius: '16px',
-            overflow: 'hidden',
-            boxShadow: '0 8px 48px rgba(0,0,0,0.30)',
-            marginBottom: '3.5rem',
-          }}
-        >
-          {/* Photo side */}
-          <div style={{ position: 'relative', minHeight: '20rem' }}>
+        {/* ── Foto + Citações ── */}
+        <div data-b5-animate data-delay="1" style={{
+          ...animBase,
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 20rem), 1fr))',
+          border: '1px solid rgba(140,87,55,0.28)',
+          borderTop: '2px solid #8C5737',
+          borderRadius: '16px',
+          overflow: 'hidden',
+          boxShadow: '0 16px 64px rgba(0,0,0,0.40)',
+          marginBottom: '0',
+        }}>
+          {/* Foto */}
+          <div style={{ position: 'relative', minHeight: '26rem' }}>
             <img
               src="/assets/card 5.png"
               alt="Paká Kamanawa — guardian of the Noke Koĩ chants"
               style={{
                 width: '100%',
                 height: '100%',
-                minHeight: '20rem',
+                minHeight: '26rem',
                 objectFit: 'cover',
                 objectPosition: 'center 15%',
                 display: 'block',
               }}
             />
-            {/* Subtle gradient overlay at bottom */}
-            <div
-              aria-hidden="true"
-              style={{
-                position: 'absolute',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                height: '45%',
-                background: 'linear-gradient(to bottom, transparent, rgba(40,76,66,0.55))',
-                pointerEvents: 'none',
-              }}
-            />
+            <div aria-hidden="true" style={{
+              position: 'absolute',
+              bottom: 0, left: 0, right: 0,
+              height: '55%',
+              background: 'linear-gradient(to bottom, transparent, rgba(29,29,29,0.65))',
+              pointerEvents: 'none',
+            }} />
           </div>
 
-          {/* Quotes side */}
-          <div
-            style={{
-              background: 'rgba(255,255,255,0.04)',
-              padding: 'clamp(1.75rem, 4vw, 2.5rem)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              gap: '2rem',
-            }}
-          >
-            {/* Paká quote */}
-            <div
-              data-b5-animate
-              data-delay="2"
-              style={{ ...animBase }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                <IconVoice />
-                <span
-                  style={{
-                    fontFamily: "'Cinzel', serif",
-                    fontSize: '0.6rem',
-                    letterSpacing: '0.22em',
-                    textTransform: 'uppercase',
-                    color: '#5B9C9B',
-                    opacity: 0.75,
-                  }}
-                >
+          {/* Citações — câmara sagrada */}
+          <div style={{
+            background: 'rgba(0,0,0,0.32)',
+            padding: 'clamp(2rem, 4vw, 2.75rem)',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            gap: '0',
+          }}>
+
+            {/* ── Citação Paká — protagonista principal ── */}
+            <div data-b5-animate data-delay="2" style={{ ...animBase, marginBottom: '2rem' }}>
+              {/* Nome com dignidade */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem' }}>
+                <IconFeather />
+                <span style={{
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: '0.80rem',
+                  letterSpacing: '0.28em',
+                  textTransform: 'uppercase',
+                  color: '#E6E3DC',
+                  opacity: 1,
+                  fontWeight: 700,
+                }}>
                   {t.pakaLabel}
                 </span>
               </div>
-              <p
-                style={{
+
+              {/* Citação com abre-aspas decorativo */}
+              <div style={{ position: 'relative', paddingLeft: '0.5rem' }}>
+                <span aria-hidden="true" style={{
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: '4rem',
+                  color: '#8C5737',
+                  opacity: 0.22,
+                  lineHeight: 0.8,
+                  display: 'block',
+                  marginBottom: '-1rem',
+                  userSelect: 'none',
+                }}>"</span>
+                <p style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: 'clamp(0.95rem, 2.3vw, 1.05rem)',
-                  lineHeight: 1.80,
-                  color: '#E8E0C9',
-                  opacity: 0.88,
+                  fontSize: 'clamp(1rem, 2.4vw, 1.1rem)',
+                  lineHeight: 1.82,
+                  color: '#E6E3DC',
+                  opacity: 0.92,
                   fontStyle: 'italic',
-                }}
-              >
-                {t.pakaQuote}
-              </p>
+                }}>
+                  {t.pakaQuote}
+                </p>
+              </div>
             </div>
 
-            {/* Thin separator between quotes */}
-            <div
-              aria-hidden="true"
-              style={{ height: '1px', background: 'rgba(200,149,95,0.20)', width: '100%' }}
-            />
+            {/* Separador */}
+            <div aria-hidden="true" style={{
+              height: '1px',
+              background: 'rgba(230,227,220,0.14)',
+              marginBottom: '2rem',
+            }} />
 
-            {/* Rurá quote */}
-            <div
-              data-b5-animate
-              data-delay="3"
-              style={{ ...animBase }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                <IconVoice />
-                <span
-                  style={{
-                    fontFamily: "'Cinzel', serif",
-                    fontSize: '0.6rem',
-                    letterSpacing: '0.22em',
-                    textTransform: 'uppercase',
-                    color: '#5B9C9B',
-                    opacity: 0.75,
-                  }}
-                >
+            {/* ── Citação Rurá ── */}
+            <div data-b5-animate data-delay="3" style={{ ...animBase }}>
+              {/* Nome */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem' }}>
+                <IconFeather />
+                <span style={{
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: '0.75rem',
+                  letterSpacing: '0.26em',
+                  textTransform: 'uppercase',
+                  color: '#E6E3DC',
+                  opacity: 0.88,
+                  fontWeight: 600,
+                }}>
                   {t.ruraLabel}
                 </span>
               </div>
-              <p
-                style={{
+
+              {/* Citação */}
+              <div style={{ position: 'relative', paddingLeft: '0.5rem' }}>
+                <span aria-hidden="true" style={{
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: '3.2rem',
+                  color: '#8C5737',
+                  opacity: 0.18,
+                  lineHeight: 0.8,
+                  display: 'block',
+                  marginBottom: '-0.85rem',
+                  userSelect: 'none',
+                }}>"</span>
+                <p style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: 'clamp(0.95rem, 2.3vw, 1.05rem)',
-                  lineHeight: 1.80,
-                  color: '#E8E0C9',
-                  opacity: 0.88,
+                  fontSize: 'clamp(0.92rem, 2.2vw, 1rem)',
+                  lineHeight: 1.82,
+                  color: '#E6E3DC',
+                  opacity: 0.80,
                   fontStyle: 'italic',
-                }}
-              >
-                {t.ruraQuote}
-              </p>
+                }}>
+                  {t.ruraQuote}
+                </p>
+              </div>
             </div>
+
           </div>
         </div>
 
-        {/* ── (D) Closing editorial seal ─────────────────────── */}
-        <div
-          data-b5-animate
-          data-delay="1"
-          style={{
-            ...animBase,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '6px',
-            paddingBottom: '1rem',
-          }}
-          aria-hidden="true"
-        >
-          <div style={{ height: '1px', width: '5rem', background: 'rgba(200,149,95,0.20)' }} />
-          <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-            <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: 'rgba(200,149,95,0.30)', display: 'block' }} />
-            <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: 'rgba(200,149,95,0.50)', display: 'block' }} />
-            <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: 'rgba(200,149,95,0.30)', display: 'block' }} />
-          </div>
+        <DiamondRule />
+
+        {/* ── Callout ético — após a foto, com cerimônia ── */}
+        <div data-b5-animate data-delay="2" style={{
+          ...animBase,
+          maxWidth: '36rem',
+          margin: '0 auto',
+          background: 'rgba(0,0,0,0.25)',
+          border: '1px solid rgba(230,227,220,0.14)',
+          borderRadius: '16px',
+          padding: 'clamp(1.75rem, 4vw, 2.25rem)',
+          boxShadow: '0 8px 40px rgba(0,0,0,0.25)',
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '1.25rem',
+        }}>
+          {/* Ornamento central */}
+          <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+            <polygon points="14,2 26,14 14,26 2,14" fill="none" stroke="#8C5737" strokeWidth="1.2" opacity="0.55" />
+            <circle cx="14" cy="14" r="3.5" fill="#8C5737" opacity="0.45" />
+          </svg>
+
+          <p style={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: 'clamp(0.98rem, 2.5vw, 1.1rem)',
+            lineHeight: 1.88,
+            color: '#E6E3DC',
+            opacity: 0.88,
+            fontStyle: 'italic',
+          }}>
+            {t.ethicalCallout}
+          </p>
         </div>
 
       </div>
+
+      <div aria-hidden="true" style={{ height: '1px', background: 'rgba(230,227,220,0.14)', width: '100%' }} />
     </section>
   )
 }

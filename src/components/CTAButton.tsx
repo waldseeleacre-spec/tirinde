@@ -21,8 +21,8 @@ export function CTAButton({ label, microcopy, href = '#offer', size = 'lg' }: CT
           'shadow-lg hover:shadow-xl active:scale-[0.98]',
         ].join(' ')}
         style={{
-          background: 'linear-gradient(135deg, #C8955F 0%, #a0733d 100%)',
-          color: '#1C3830',
+          background: '#8C5737',
+          color: '#E6E3DC',
           fontFamily: 'Cinzel, serif',
           letterSpacing: '0.05em',
         }}
@@ -31,7 +31,7 @@ export function CTAButton({ label, microcopy, href = '#offer', size = 'lg' }: CT
       </a>
       <p
         className="text-xs sm:text-sm text-center opacity-60 tracking-wide"
-        style={{ fontFamily: 'Inter, sans-serif', color: '#E8E0C9' }}
+        style={{ fontFamily: 'Inter, sans-serif', color: '#E6E3DC' }}
       >
         {microcopy}
       </p>

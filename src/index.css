@@ -1,12 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-forest:    #284C42;
-  --color-forest-deep: #1C3830;
-  --color-cream:     #E8E0C9;
-  --color-teal:      #5B9C9B;
-  --color-ochre:     #C8955F;
-  --color-ochre-dark: #a0733d;
+  /* ── Nova paleta ancestral premium ── */
+  --color-base:      #E6E3DC;   /* off-white areia — fundo principal */
+  --color-secondary: #DFD3C7;   /* bege linho — fundo secundário */
+  --color-olive:     #7A795B;   /* verde oliva — cor orgânica principal */
+  --color-slate:     #435362;   /* azul ardósia — profundidade elegante */
+  --color-charcoal:  #1D1D1D;   /* carvão — contraste forte */
+  --color-terra:     #8C5737;   /* terracota — acento quente ancestral */
+
+  /* Aliases compatíveis com classes existentes */
+  --color-forest:      #7A795B;
+  --color-forest-deep: #435362;
+  --color-cream:       #E6E3DC;
+  --color-teal:        #435362;
+  --color-ochre:       #8C5737;
+  --color-ochre-dark:  #6B3F26;
 
   --font-display: 'Cinzel', serif;
   --font-body:    'Inter', sans-serif;
@@ -18,12 +27,12 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #284C42;
+  background-color: #E6E3DC;
 }
 
 body {
-  background-color: #284C42;
-  color: #E8E0C9;
+  background-color: #E6E3DC;
+  color: #1D1D1D;
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

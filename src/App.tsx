@@ -32,7 +32,7 @@ import { Block12Closing } from './blocks/Block12Closing'
 export default function App() {
   return (
     <LangProvider>
-      <main className="min-h-screen" style={{ background: '#284C42' }}>
+      <main className="min-h-screen" style={{ background: '#E6E3DC' }}>
         <Block01Hero />
         <Block02HollowEcho />
         <Block03TruthMechanism />
